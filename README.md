@@ -4,7 +4,7 @@ Panoramic Stitching
 This algorithm mainly uses several pictures taken by one camera in one fixed position from different angles. These pictures can be stitched together with the Homography matrix.<br>
 
 ## Construct the panoramicStitching class
-`cpp
+cpp`
 std::vector<std::pair<int, int>> image_pairs = { { 3, 0 },{ 3, 1 },{ 3, 2 } };
 int base_index = 3;
 panSti::panoramicStitching pan(base_index, names, image_pairs);
