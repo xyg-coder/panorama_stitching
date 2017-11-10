@@ -56,12 +56,12 @@ return ini_homo;
 
 # Use the Homography matrix to stitch different images
 * The stitching algorithm is implemented in `panoramicStitching::stitch_image()` function.<br>
-* With the overlapping area, using the average pixel value as the result value will lead to blur. Thus, I use the pixel value of the image whose center is nearest to this point as the result pixel value.<br>
-1. Calculate the Homography matrix corresponding to the base image.
-2. Use 4 end-points of every image to calculate the size of the final result image.
-3. Translate every image right with `abs(left_most)` and down with `abs(up_most)` to make the coordinates all greater than 0.
-4. Use the `cv::warpPerspective()` to get the result image after the projection transform.
-5. Iterate over all points in the image. With every point, set the corresponding pixel value of the nearest image as its value.
+* With the overlapping area, using the average pixel value as the result value will lead to blur. Thus, I use the pixel value of the image whose center is nearest to this point as the result pixel value.
+* Calculate the Homography matrix corresponding to the base image.
+1. Use 4 end-points of every image to calculate the size of the final result image.
+2. Translate every image right with `abs(left_most)` and down with `abs(up_most)` to make the coordinates all greater than 0.
+3. Use the `cv::warpPerspective()` to get the result image after the projection transform.
+4. Iterate over all points in the image. With every point, set the corresponding pixel value of the nearest image as its value.
 
 # Image stitching result
 * Data1:<br>
